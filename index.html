@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Untuk mengakali cache github, biar langsung update setelah di push berkala -->
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Shop at Egrociers for a convenient and hassle-free online grocery shopping experience" />
+    <meta name="keywords" content="egrociers, online grocery, grocery store, revou, fcse mini project" />
+    <title>Travel Agent</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"
+      integrity="sha512-24XP4a9KVoIinPFUbcnjIjAjtS59PUoxQj3GNVpWc86bCqPuy3YxAcxJrxFCxXe4GHtAumCbO2Ze2bddtuxaRw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <nav class="navbar">
+          <div class="logo">
+            <img src="./assets/logo.png" alt="logo travel agent" />
+          </div>
+          <button class="menu-button" id="menu-button" onclick="toggleMenuButton()">
+            <i data-feather="menu"></i>
+          </button>
+          <ul class="navigation-list" id="menu-list">
+            <li><a href="#hero" onclick="setTitle(this)">Home</a></li>
+            <li>
+              <a href="#our-package" onclick="setTitle(this)">Our Package</a>
+            </li>
+            <li><a href="#call-us" onclick="setTitle(this)">Call Us</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="main-content">
+      <div class="hero" id="hero">
+        <div class="hero-slider" id="hero-slider">
+          <img id="slide1" src="./assets/images/banner1.jpg" alt="" />
+          <img id="slide2" src="./assets/images/banner2.jpg" alt="" />
+          <img id="slide3" src="./assets/images/banner3.jpg" alt="" />
+          <img id="slide4" src="./assets/images/banner4.jpg" alt="" />
+          <img id="slide5" src="./assets/images/banner5.jpg" alt="" />
+          <img id="slide6" src="./assets/images/banner1.jpg" alt="" />
+          <img id="slide7" src="./assets/images/banner2.jpg" alt="" />
+          <img id="slide8" src="./assets/images/banner3.jpg" alt="" />
+        </div>
+        <div class="hero-wrapper">
+          <h1 class="main-title">Your Trusted Travel Agent's</h1>
+          <p class="hero-description">Your happiness is our happiness</p>
+          <button class="button" onclick="getStartButton()">Get started!</button>
+        </div>
+      </div>
+      <div class="container">
+        <div class="about-contact" id="about">
+          <div class="about">
+            <img src="./assets/images/banner.jpg" alt="" class="about-img" />
+            <p class="about-caption">Liburan itu bukan untuk bermalas-malasan, tapi untuk bersenang-senang menikmati petualang baru yang seru.</p>
+            <div class="about-author">
+              <img src="./assets/images/avatar.jpg" alt="" class="author-img" />
+              <div class="author-data">
+                <div class="author-name">Florence Hughes</div>
+                <div class="author-info">Ibu Rumah Tangga, 28</div>
+              </div>
+            </div>
+            <hr class="border" />
+            <div class="feature">
+              <h2 class="subsection-title">Manfaat memilih travelling untuk kesehatan mental:</h2>
+              <div class="feature-list">
+                <div class="feature-item">
+                  <div class="feature-icon">
+                    <i data-feather="arrow-right"></i>
+                  </div>
+                  <div class="feature-description">Menurunkan stres dan depresi</div>
+                </div>
+                <div class="feature-item">
+                  <div class="feature-icon">
+                    <i data-feather="arrow-right"></i>
+                  </div>
+                  <div class="feature-description">Menghilangkan kesedihan</div>
+                </div>
+                <div class="feature-item">
+                  <div class="feature-icon">
+                    <i data-feather="arrow-right"></i>
+                  </div>
+                  <div class="feature-description">Memperkuat ikatan dan hubungan</div>
+                </div>
+                <div class="feature-item">
+                  <div class="feature-icon">
+                    <i data-feather="arrow-right"></i>
+                  </div>
+                  <div class="feature-description">Menurunkan berat badan</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="contact">
+            <h2 class="subsection-title">Hubungin Kami</h2>
+            <p>Admin akan menghubungi Anda dalam waktu 1 hari setelah data anda kami terima</p>
+            <form class="contact-form" name="contact-form" onsubmit="return validateForm()">
+              <div class="form-field">
+                <label for="name" class="input-label">Nama Lengkap:</label>
+                <input type="text" id="name" name="name" class="input-field" placeholder="First name and last name" oninput="fillInput('nama')" />
+                <p class="error-msg" id="name-error">Tolong ketik nama asli</p>
+              </div>
+              <div class="form-field">
+                <label for="email" class="input-label">Alamat Email:</label>
+                <input type="text" id="email" name="email" class="input-field" placeholder="example@email.com" oninput="fillInput('email')" />
+                <p class="error-msg" id="email-error">Tolong ketik alamat email dengan benar</p>
+              </div>
+              <div class="form-field">
+                <label for="interest" class="input-label">Apa anda yang kunjungi perjalanan ?</label>
+                <select id="interest" name="interest" class="input-field" oninput="selectInterest()">
+                  <option value="none" selected disabled>Select Travel</option>
+                  <option value="option 1">Jakarta</option>
+                  <option value="option 2">Bandung</option>
+                  <option value="option 3">Surabaya</option>
+                  <option value="option 4">Manado</option>
+                  <option value="option 5">Bekasi</option>
+                  <option value="option 6">Lampung</option>
+                </select>
+                <p class="error-msg" id="interest-error">Please select one interest</p>
+              </div>
+              <button type="submit" class="button">Kirim</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="package" id="our-package">
+        <div class="package-banner">
+          <div class="container">
+            <h2 class="section-title">Our Packages</h2>
+          </div>
+        </div>
+        <div class="container">
+          <div class="package-list">
+            <div class="package-item">
+              <div class="package-icon">
+                <i data-feather="map-pin"></i>
+              </div>
+              <div class="package-content">
+                <h3>Jakarta</h3>
+                <p>Jakarta adalah secara resmi bernama Daerah Khusus Ibukota Jakarta atau DKI Jakarta, sebelumnya dikenal sebagai Batavia, adalah ibu kota Indonesia dan sekaligus daerah otonom setingkat provinsi.</p>
+              </div>
+            </div>
+            <div class="package-item">
+              <div class="package-icon">
+                <i data-feather="map-pin"></i>
+              </div>
+              <div class="package-content">
+                <h3>Bandung</h3>
+                <p>Kota Bandung adalah sebuah kota sekaligus menjadi ibu kota provinsi di Provinsi Jawa Barat, Indonesia. Kota Bandung juga merupakan kota terbesar keempat di Indonesia, setelah Jakarta, Kota Surabaya, dan Kota Medan.</p>
+              </div>
+            </div>
+            <div class="package-item">
+              <div class="package-icon">
+                <i data-feather="map-pin"></i>
+              </div>
+              <div class="package-content">
+                <h3>Surabaya</h3>
+                <p>
+                  Kota Surabaya adalah ibu kota Provinsi Jawa Timur yang menjadi pusat pemerintahan dan perekonomian sekaligus kota terbesar di provinsi tersebut. Surabaya juga merupakan sebuah kota yang terletak di Provinsi Jawa Timur,
+                  Indonesia.
+                </p>
+              </div>
+            </div>
+          </div>
+          <hr class="border" />
+          <div class="package-list">
+            <div class="package-item">
+              <div class="package-icon">
+                <i data-feather="map-pin"></i>
+              </div>
+              <div class="package-content">
+                <h3>Manado</h3>
+                <p>
+                  Nama Manado yang dikenal saat ini berasal dari kata Manarow atau Manadou (bahasa daerah Minahasa), yang artinya “dijauh”; suatu sebutan yang hampir sama dengan bahasa Sangihe, yaitu Manaro, yang artinya juga “dijauh” atau
+                  “negeri yang jauh”.
+                </p>
+              </div>
+            </div>
+            <div class="package-item">
+              <div class="package-icon">
+                <i data-feather="map-pin"></i>
+              </div>
+              <div class="package-content">
+                <h3>Bekasi</h3>
+                <p>Nama Bekasi berasal dari kata Bagasasi yang artinya sama dengan Candrabaga yang tertulis di dalam Prasasti Tugu era Kerajaan Tarumanegara, yaitu nama sungai yang melewati kota ini.</p>
+              </div>
+            </div>
+            <div class="package-item">
+              <div class="package-icon">
+                <i data-feather="map-pin"></i>
+              </div>
+              <div class="package-content">
+                <h3>Lampung</h3>
+                <p>Provinsi Lampung adalah provinsi yang terletak pada bagian sebelah paling ujung tenggara pulau Sumatera.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cta" id="call-us">
+        <div class="container">
+          <h2 class="section-title">Setiap langkah adalah petualangan baru, setiap sudut memiliki cerita tersendiri.</h2>
+          <p>Kegiatan perjalanan, bepergian, dan melancong</p>
+          <button class="button">Hubungi Kami</button>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="logo">
+          <img src="./assets/logo.png" alt="travel agent logo" width="125" />
+        </div>
+        <ul class="footer-navigation">
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+        <div>© 2024 <a href="https://www.instagram.com/erikraynaldoo">Erik Raynaldo</a></div>
+      </div>
+    </footer>
+    <script>
+      feather.replace();
+    </script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
